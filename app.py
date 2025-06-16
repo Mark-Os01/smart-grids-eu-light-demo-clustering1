@@ -47,6 +47,68 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Implementazione K-Medoids compatibile con Python 3.13
+from sklearn.metrics import pairwise_distances
+import numpy as np
+
+class KMedoids:
+    def __init__(self, n_clusters=8, metric='euclidean', method='pam', 
+                 init='k-medoids++', max_iter=300, random_state=None):
+        self.n_clusters = n_clusters
+        self.metric = metric
+        self.method = method
+        self.init = init
+        self.max_iter = max_iter
+        self.random_state = random_state
+        
+    def fit(self, X):
+        np.random.seed(self.random_state)
+        n_samples = X.shape[0]
+        
+        # Calcola matrice distanze
+        D = pairwise_distances(X, metric=self.metric)
+        
+        # Inizializzazione
+        if self.init == 'k-medoids++' or self.init == 'random':
+            medoid_indices = np.random.choice(n_samples, self.n_clusters, replace=False)
+        else:
+            medoid_indices = np.random.choice(n_samples, self.n_clusters, replace=False)
+            
+        self.medoid_indices_ = medoid_indices
+        self.cluster_centers_ = X[medoid_indices]
+        
+        # Assegna cluster
+        self.labels_ = np.argmin(D[:, medoid_indices], axis=1)
+        
+        # Ottimizzazione semplificata
+        for _ in range(self.max_iter):
+            old_medoids = medoid_indices.copy()
+            
+            for i in range(self.n_clusters):
+                cluster_members = np.where(self.labels_ == i)[0]
+                if len(cluster_members) > 0:
+                    cluster_distances = D[cluster_members][:, cluster_members]
+                    costs = np.sum(cluster_distances, axis=1)
+                    new_medoid = cluster_members[np.argmin(costs)]
+                    medoid_indices[i] = new_medoid
+            
+            self.cluster_centers_ = X[medoid_indices]
+            self.labels_ = np.argmin(D[:, medoid_indices], axis=1)
+            
+            if np.array_equal(old_medoids, medoid_indices):
+                break
+                
+        self.medoid_indices_ = medoid_indices
+        return self
+        
+    def fit_predict(self, X):
+        self.fit(X)
+        return self.labels_
+        
+    def predict(self, X):
+        D = pairwise_distances(X, self.cluster_centers_, metric=self.metric)
+        return np.argmin(D, axis=1)
+
 # --- CONFIGURAZIONE DEMO LIGHT FISSA ---
 # Dataset ultra-leggero per laptop
 DEMO_COUNTRIES = ['Italy', 'Germany', 'France', 'Poland', 'Sweden']  # 5 paesi
