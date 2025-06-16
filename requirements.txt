@@ -1,9 +1,8 @@
-streamlit
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-scikit-learn-extra
-scipy
-minisom
+streamlit==1.32.0
+pandas==2.2.0
+numpy==1.26.3
+matplotlib==3.8.2
+seaborn==0.13.2
+scikit-learn==1.4.0
+scipy==1.11.4
+minisom==2.3.1
