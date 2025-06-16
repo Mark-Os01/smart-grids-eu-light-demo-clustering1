@@ -1,25 +1,26 @@
-# ⚡ Smart Grid EU – Clustering dei consumi elettrici
+# 🇪🇺 Smart Grids EU - Light Demo Clustering
 
-Questa applicazione Streamlit consente di analizzare e segmentare i pattern di consumo elettrico in Europa simulando un dataset energetico.
+## 📊 Analisi Clustering dei Pattern di Consumo Energetico EU
 
-### 🧪 Funzionalità principali
-- Generazione di dataset sintetico con consumi orari per Paese europeo
-- Preprocessing dei dati e feature engineering automatico
-- Visualizzazione SOM (Self-Organizing Map) per pattern non lineari
-- Clustering robusto con algoritmo **K-Medoids**
-- Profilazione dei cluster per interpretazioni aziendali
+### 🎯 Descrizione
+Applicazione Streamlit per l'analisi dei pattern di consumo energetico nei paesi dell'Unione Europea utilizzando tecniche avanzate di clustering non supervisionato.
 
-### 🛠️ Tecnologie usate
-- Python
-- Streamlit
-- Pandas, Numpy, Scikit-Learn
-- MiniSom, Scikit-learn-extra
-- Matplotlib, Seaborn
+### ✨ Features
+- **Pipeline Innovativa**: SOM → Ward → K-Medoids
+- **Dataset Light**: 5 paesi rappresentativi (IT, DE, FR, PL, SE) × 31 giorni
+- **Performance**: <10 secondi per l'intera pipeline su laptop standard
+- **Visualizzazioni**: U-Matrix SOM, Dendrogramma, PCA, Radar Chart
+- **100% Python**: Nessuna dipendenza esterna
 
-### ▶️ Come provarla online
-Lancia l'app direttamente su **Streamlit Cloud**:
+### 🚀 Demo Live
+👉 [https://smart-grids-eu-light-demo-clustering1.streamlit.app](https://smart-grids-eu-light-demo-clustering1.streamlit.app)
 
-👉 👉 [https://smart-grid-eu-light-demo.streamlit.app](https://smart-grid-eu-light-demo.streamlit.app)
+### 💻 Installazione Locale
+```bash
+git clone https://github.com/Mark-Os01/smart-grids-eu-light-demo-clustering1.git
+cd smart-grids-eu-light-demo-clustering1
+pip install -r requirements.txt
+streamlit run app.py
 
 ### 👨‍🎓 Progetto didattico
 Realizzato per il corso *AI & Machine Learning per il Marketing* – Università IULM.
