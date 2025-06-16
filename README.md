@@ -22,4 +22,4 @@ Lancia l'app direttamente su **Streamlit Cloud**:
 👉 👉 [https://smart-grid-eu-light-demo.streamlit.app](https://smart-grid-eu-light-demo.streamlit.app)
 
 ### 👨‍🎓 Progetto didattico
-Realizzato per il corso *AI & Machine Learning for Marketing* – Università IULM.
+Realizzato per il corso *AI & Machine Learning per il Marketing* – Università IULM.
