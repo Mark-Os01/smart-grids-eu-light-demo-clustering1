@@ -19,7 +19,7 @@ Questa applicazione Streamlit consente di analizzare e segmentare i pattern di c
 ### ▶️ Come provarla online
 Lancia l'app direttamente su **Streamlit Cloud**:
 
-👉 [https://smart-grid-eu.streamlit.app](https://smart-grid-eu.streamlit.app)
+👉 👉 [https://smart-grid-eu-light-demo.streamlit.app](https://smart-grid-eu-light-demo.streamlit.app)
 
 ### 👨‍🎓 Progetto didattico
 Realizzato per il corso *AI & Machine Learning for Marketing* – Università IULM.
