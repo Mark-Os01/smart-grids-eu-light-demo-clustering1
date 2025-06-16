@@ -1,6 +1,33 @@
+```toml
 [theme]
+# Colori professionali per tema energetico EU
 primaryColor = "#0066cc"
-backgroundColor = "#ffffff"
+backgroundColor = "#ffffff" 
 secondaryBackgroundColor = "#f0f2f6"
 textColor = "#262730"
 font = "sans serif"
+
+[server]
+# Ottimizzazioni per performance su laptop
+maxUploadSize = 50
+maxMessageSize = 50
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+# Disabilita raccolta statistiche
+gatherUsageStats = false
+serverAddress = "localhost"
+serverPort = 8501
+
+[runner]
+# Magic commands disabilitati per performance
+magicEnabled = false
+installTracer = false
+fixMatplotlib = true
+
+[client]
+# Cache e performance
+caching = true
+displayEnabled = true
+showSidebarNavigation = true
